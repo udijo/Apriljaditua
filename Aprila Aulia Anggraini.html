@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun Aprila</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe0ec, #ffeccf);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(#ffffff40 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: moveParticles 60s linear infinite;
+      z-index: 1;
+      opacity: 0.2;
+    }
+
+    @keyframes moveParticles {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+
+    .card {
+      background: linear-gradient(180deg, #fff0f5, #ffe4e1);
+      padding: 2.5rem;
+      border-radius: 40% / 12%;
+      box-shadow: 0 16px 60px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 600px;
+      z-index: 2;
+      position: relative;
+      animation: fadeIn 1.5s ease;
+      border: 4px solid #ffcad4;
+      overflow: hidden;
+    }
+
+    .cake-top {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      animation: float 3s ease-in-out infinite;
+      background: #ffb6c1;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .candle {
+      width: 8px;
+      height: 30px;
+      background: #ff6f61;
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .flame {
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, yellow 0%, orange 60%, red 100%);
+      border-radius: 50%;
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 0.2s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from { transform: translateX(-50%) scale(1); }
+      to { transform: translateX(-50%) scale(1.1); }
+    }
+
+    .decor {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #e63946;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #333;
+      margin-bottom: 1.2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.8;
+      margin: 0.6rem 0;
+    }
+
+    p strong {
+      color: #da3e52;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .nama {
+      font-size: 2rem;
+      color: #c2185b;
+      margin-top: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideIn 2s ease-out 4s forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cake-bottom {
+      position: absolute;
+      bottom: -10px;
+      width: 100%;
+      height: 30px;
+      background: repeating-linear-gradient(
+        -45deg,
+        #ffc1cc,
+        #ffc1cc 10px,
+        #ffe4e1 10px,
+        #ffe4e1 20px
+      );
+      z-index: -1;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fireworks"></canvas>
+  <div class="particles"></div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2023/03/17/audio_bdd9ba197e.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <div class="cake-top">
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+      🍓🎂🍒
+    </div>
+    <div class="decor">🎇✨</div>
+    <h1>Selamat Ulang Tahun</h1>
+    <h2>Ke-28 untuk yang paling bersinar</h2>
+    <p>Semoga hari ini jadi bait indah dalam puisi hidupmu.</p>
+    <p>Langit menuliskan harapan, dan semesta diam-diam mengamini.</p>
+    <p>Semoga langkahmu ringan, hatimu tenang,</p>
+    <p>dan setiap detik mengalirkan cahaya baru yang tak henti menyinari harimu.</p>
+    <p><strong>Dunia lebih indah karena ada kamu.</strong></p>
+    <div class="nama">Aprila Aulia Anggraini</div>
+    <div class="cake-bottom"></div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("fireworks");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const fireworks = [];
+
+    function createFirework() {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height / 2;
+      const colors = ['#ff4e50', '#f9d423', '#f8b195', '#c06c84', '#6c5b7b'];
+      for (let i = 0; i < 60; i++) {
+        fireworks.push({
+          x: x,
+          y: y,
+          radius: Math.random() * 2 + 1,
+          angle: Math.random() * 2 * Math.PI,
+          speed: Math.random() * 5 + 1,
+          alpha: 1,
+          color: colors[Math.floor(Math.random() * colors.length)]
+        });
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = fireworks.length - 1; i >= 0; i--) {
+        const f = fireworks[i];
+        const vx = Math.cos(f.angle) * f.speed;
+        const vy = Math.sin(f.angle) * f.speed;
+        f.x += vx;
+        f.y += vy;
+        f.alpha -= 0.015;
+        if (f.alpha <= 0) {
+          fireworks.splice(i, 1);
+          continue;
+        }
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, f.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${hexToRgb(f.color)}, ${f.alpha})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    function hexToRgb(hex) {
+      const bigint = parseInt(hex.slice(1), 16);
+      const r = (bigint >> 16) & 255;
+      const g = (bigint >> 8) & 255;
+      const b = bigint & 255;
+      return `${r},${g},${b}`;
+    }
+
+    setInterval(createFirework, 1000);
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
